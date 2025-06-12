@@ -1,0 +1,95 @@
+//Суть задачи - сделать код читабельнее и короче при помощи инкремента (оператор++)
+//Задача взята с сайта Skillbox - Профессия Frontend-разработчик с нуля до PRO - JavaScript <<Базовый Уровень>> - раздел 2 - Тренажёр ""
+
+//Исходная задача
+
+// Синтаксис переключения в строгий режим всего скрипта
+"use strict";
+
+let counter = 0
+
+console.log("Список пользователей:");
+
+let user1 = "Аня"
+counter = counter + 1
+console.log(counter + ")" + user1);
+
+let user2 = "Василий"
+counter = counter + 1
+console.log(counter + ")" + user2);
+
+let user3 = "Ирина"
+counter = counter + 1
+console.log(counter + ")" + user3);
+
+let user4 = "Женя"
+counter = counter + 1
+console.log(counter + ")" + user4);
+
+let user5 = "Татьяна"
+counter = counter + 1
+console.log(counter + ")" + user5);
+
+---------------------------------------------
+
+//Мой вариант
+
+// Синтаксис переключения в строгий режим всего скрипта
+"use strict";
+
+let counter = 0
+
+console.log("Список пользователей:");
+
+let user1 = "Аня"
+counter++
+console.log(counter + ")" + user1);
+
+let user2 = "Василий"
+counter++
+console.log(counter + ")" + user2);
+
+let user3 = "Ирина"
+counter+=1
+console.log(counter + ")" + user3);
+
+let user4 = "Женя"
+counter++
+console.log(counter + ")" + user4);
+
+let user5 = "Татьяна"
+counter++
+console.log(counter + ")" + user5);
+
+---------------------------------------------
+
+//Задача крайне проста, однако у меня возникла идея, почему бы не изменить код таким образом, чтобы вывод элементов выглядел проще?
+//Вот придуманный мной вариант кода
+
+// Синтаксис переключения в строгий режим всего скрипта
+"use strict";
+
+const users = ['1)Аня', '2)Василий', '3)Ирина', '4)Женя', '5)Татьяна'];
+
+function printUsers(usersArray) {
+  let index = 0;
+  
+  return function() {
+    if (index < usersArray.length) {
+      console.log(usersArray[index]);
+      index++;
+    } else {
+      console.log('Ну всё');
+    }
+  };
+}
+
+const printNextUser = printUsers(users);
+
+for (let i = 0; i <= users.length; i++) {
+  printNextUser();
+}
+
+//Сначала у меня не получилось задуманное, но я вернулся к этой задаче после того как изучил следующие темы курса, так-же для изучения сложных тем и потенциальных возможностей мной были использованы сайт https://learn.javascript.ru и нейросеть DeepSeek
+
+//Задача очень проста, трудностей нет, интересных моментов нет, идей нет
